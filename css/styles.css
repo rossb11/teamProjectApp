@@ -10259,3 +10259,55 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
+/*---------- Custom CSS for index.html------------- */
+
+.flex-container{
+
+ height:50em;
+ width: 100%;
+ display:flex;
+
+}
+
+.lostSection{
+
+  padding-top: 15em;
+  background-color:#FF9F1C;
+  width:100%;
+}
+
+.foundSection{
+  padding-top: 15em;
+  background-color:#CBF3F0;
+  width:100%;
+}
+.lostSection h2{
+  text-align: center;
+  font-size: 3.5em;
+  color: #000;
+}
+.foundSection h2{
+  text-align: center;
+  font-size: 3.5em;
+  text-decoration: none;
+
+}
+
+.lostSection a, .foundSection a{
+  text-decoration: none;
+}
+
+.lostSection img{
+  width: 25em;
+  height: 25em;
+  margin-left: 25%;
+}
+
+.foundSection img{
+  width: 25em;
+  height: 25em;
+  margin-left: 25%;
+  
+}
+
