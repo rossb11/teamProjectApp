@@ -10372,3 +10372,31 @@ form .row:first-child .floating-label-form-group {
   
 }
 
+.mapouter{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/*----------End of Custom CSS for index.html------------- */
+
+
+
+
+/*----------Custom CSS for categories.html------------- */
+#portfolio{
+  padding-top: 10em;
+}
+
+#portfolio img{
+  height: 15em;
+  width: 15em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#portfolio p{
+  text-align: center;
+  padding: 0.5em;
+}
