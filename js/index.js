@@ -1,35 +1,4 @@
 
-      // // Initialize and add the map
-      // var latitude = 53.4129;
-      // var longitude = 8.2439;
-      
-      // function initMap() {
-        
-      //   const map = new google.maps.Map(document.getElementById("map"), {
-      //     zoom: 8,
-      //     center: {lat:latitude, lng: longitude},
-      //   });
-        
-      //   const marker = new google.maps.Marker({
-      //     position: {lat:53.4129, lng: 8.2439},
-      //     map: map,
-      //   });
-      // }
-      // function getLocation() {
-      
-      //   if (navigator.geolocation) {
-      //    navigator.geolocation.getCurrentPosition(showPosition);
-      //   // console.log(navigator.geolocation.getCurrentPosition);
-      //   } else {
-      //     x.innerHTML = "Geolocation is not supported by this browser.";
-      //   }
-      // }
-      // getLocation();
-
-      // function showPosition(position) {
-      //   latitude = position.coords.latitude;
-      //   longitude = position.coords.longitude;
-      // }
       // Set these to dublin
     var latitude = 53.4129;
     var longitude = 8.2439;
@@ -44,7 +13,29 @@
           zoom: 8,
           center: {lat:latitude, lng: longitude},
         });
+        
+        const geocoder = new google.maps.Geocoder();
+        document.getElementById("submit").addEventListener("click", () => {
+        geocodeAddress(geocoder, map);
+  });
     }
+
+    function geocodeAddress(geocoder, resultsMap) {
+      const address = document.getElementById("address").value;
+      geocoder.geocode({ address: address }, (results, status) => {
+        if (status === "OK") {
+          resultsMap.setCenter(results[0].geometry.location);
+          new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location,
+          });
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
+
+    
     
     // Using the built in browser geolocation API
     // This is not 100% percise but nice feature to have
