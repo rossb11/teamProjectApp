@@ -6,7 +6,7 @@
     $pnum=$_REQUEST['phone'];
     
 
-    $sql="INSERT INTO found (usserName, phone, email) VALUE";
+    $sql="INSERT INTO found (userName, phone, email) VALUE";
    
     $sql .="('" . $name . "',";
     $sql .="'" . $pnum . "',";
