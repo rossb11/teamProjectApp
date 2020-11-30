@@ -1,14 +1,21 @@
 <?php
     require_once 'connect.php';
+    $dbLocation=mysqli_real_escape_string($conn,$_REQUEST['dbLocation']);
+    $name=mysqli_real_escape_string($conn,$_REQUEST['name']);
+    $mail=mysqli_real_escape_string($conn,$_REQUEST['email']);
+    $pnum=mysqli_real_escape_string($conn,$_REQUEST['phone']);
+    $dec=mysqli_real_escape_string($conn,$_REQUEST['dec']);
     
-    $name=$_REQUEST['name'];
-    $mail=$_REQUEST['email'];
-    $pnum=$_REQUEST['phone'];
-    
+    $sql="INSERT INTO found (itemDec,usserName, phone, email) VALUE ('$dec','$name','$pnum','$mail')";
 
-    $sql="INSERT INTO found (userName, phone, email) VALUE";
+
+    if(mysqli_query($conn, $sql)){
+        print("stored");
+    }else{
+        print("failed");
+    }
+    mysqli_close($conn);
+
    
-    $sql .="('" . $name . "',";
-    $sql .="'" . $pnum . "',";
-    $sql .="'" . $mail . "')";
+   echo "<script>location.href='../index.html'</script>";
 ?>
