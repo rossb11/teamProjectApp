@@ -1,5 +1,5 @@
-
-      // Set these to dublin
+    
+    // Set these to dublin
     var latitude = 53.4129;
     var longitude = 8.2439;
     // initalizing the map 
@@ -69,28 +69,15 @@
           map: map,
           label: "Your Current Location"
         });
+       
         //marker for lost items
-        var lostMarker = new google.maps.Marker({
-          position: {
-
-          },
-          map: map,
-          label: "Lost item",
-          icon:
-        });
+        
         //marker for found items
-        var foundMarker = new google.maps.Marker({
-            position:{
-
-          },
-          map: map,
-          label: "Found item",
-          icon: 
-        });
+       
                 
         // To add the marker to the map, call setMap();
         marker.setMap(map);
-    }
+      }
 
     // calling the getLocation() method
     getLocation();
