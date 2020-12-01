@@ -111,9 +111,27 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
+
+                            <br> </br>
+
+                            
+                                <div class="control-group">
+                                <label>    Please select a category of the item you have lost</label> <style font-size: 5px; </style> </style>
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Please describe the item you have lost</label>
+                                
+                                    <form>
+                                        <select name = "dropdown">
+                                           <option value = "List of Items" selected>List of Items</option>
+                                           <option value = "wallet">Wallet</option> 
+                                           <option value = "keys">Keys</option> 
+                                           <option value = "phone">Phone</option> 
+                                           <option value = "pets">Pets</option> 
+                                           <option value = "jewellery">Jewellery</option> 
+                                        </select>
+                                     </form>
+                                    
+                                     
+                                    <label>Please describe the item you have lost</label> 
                                     <textarea class="form-control" id="Item Description" rows="5" placeholder="Item Description" required="required" data-validation-required-message="Please enter details of the missing item."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -122,6 +140,7 @@
                                         <label>Please enter your Location</label>
                                         <textarea class="form-control" id="Item Description" rows="1" placeholder="Location" required="required" data-validation-required-message="Please enter your Location"></textarea>
                                         <p class="help-block text-danger"></p>
+                                        
                                     </div>
                             </div>
                             <br />
