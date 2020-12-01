@@ -91,6 +91,8 @@
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form id="FoundItemForm" action="php/insert.php"sentForm" novalidate="novalidate">
                             <title name="dbLocation">found</title>
+
+                            <!-- NameSection-->
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Name</label>
@@ -98,6 +100,8 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
+                            <!-- EmailSection-->
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Email Address</label>
@@ -105,6 +109,8 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
+                            <!-- PhoneSection-->
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Phone Number</label>
@@ -112,13 +118,46 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
+                            <br> </br>
+
+                            <!-- CategorySection-->
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Please describe the item you have found.</label>
-                                    <textarea class="form-control" name="dec" id="Item Description" rows="5" placeholder="ItemDescription" required="required" data-validation-required-message="Please enter the details of your found item."></textarea>
+                                    <label> </label>
+                                    <input class="form-control" id="category" type="tel" placeholder="Select a Category from the Dropdown Below" required="required" data-validation-required-message="Please select what category your lost items falls under." />
+                                    <form>
+                                        <select name = "dropdown">
+                                           <option value = "wallet" selected>Wallets/Purses</option>
+                                           <option value = "clothes">Clothes</option> 
+                                           <option value = "keys">Keys</option> 
+                                           <option value = "phone">Phones/Devices</option> 
+                                           <option value = "pets">Pets</option> 
+                                           <option value = "jewellery">Jewellery</option> 
+                                        </select>
+                                     </form>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
+                                <!-- ItemDescriptionSection-->
+                                 <div class="control-group">
+                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Please describe the item you have found.</label>
+                                    <textarea class="form-control" name="dec" id="Item Description" rows="5" placeholder="ItemDescription" required="required" data-validation-required-message="Please enter the details of your found item."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                 </div>
+                                 </div>
+
+                                 <!-- LocationSection-->
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Please enter your Location</label>
+                                        <textarea class="form-control" id="Item Description" rows="1" placeholder="Location" required="required" data-validation-required-message="Please enter your Location"></textarea>
+                                        <p class="help-block text-danger"></p>
+                                     </div>
+                                </div>
+
                             <br />
                             <div id="success"></div>
                             <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit"value="Insert">Submit Form</button></div>
