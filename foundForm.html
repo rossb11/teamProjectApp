@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="FoundItemForm" action="php/insert.php"sentForm" novalidate="novalidate">
+                        <form id="FoundItemForm" action="php/insert.php" method="POST" novalidate="novalidate">
                            <input type="hidden" name="dbTable" value="found"></input>
 
                             <!-- NameSection-->
@@ -134,6 +134,7 @@
                                            <option value = "phone">Phones/Devices</option> 
                                            <option value = "pets">Pets</option> 
                                            <option value = "jewellery">Jewellery</option> 
+                                           <option value = "other">Other</option> 
                                         </select>
                                     
                                     <p class="help-block text-danger"></p>
