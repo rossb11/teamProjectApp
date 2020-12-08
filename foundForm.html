@@ -8,7 +8,12 @@
         <title>Find My Item </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link href="css/toasty.css" rel="stylesheet">
         <!-- Font Awesome icons (free version)-->
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF1lVZ2HaMpDXmDlAmMrDAsdKZBgCAi38&libraries=&v=weekly"
+        defer
+        ></script>
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -89,14 +94,13 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="FoundItemForm" action="php/insert.php"sentForm" novalidate="novalidate">
-                            <title name="dbLocation">found</title>
+                        <div id="contactForm" name="sentMessage" novalidate="novalidate" onsubmit="e.preventDefault()">
 
                             <!-- NameSection-->
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Name</label>
-                                    <input class="form-control" id="name" type="text" name= "name" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                                    <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -105,7 +109,7 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Email Address</label>
-                                    <input class="form-control" id="email" type="email" name="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                                    <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -114,7 +118,7 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Phone Number</label>
-                                    <input class="form-control" id="phone" type="tel" name="phone" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -122,7 +126,7 @@
                             <br> </br>
 
                             <!-- CategorySection-->
-                            <div class="control-group">
+                            <!-- <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label> </label>
                                     <input class="form-control" id="category" type="tel" placeholder="Select a Category from the Dropdown Below" required="required" data-validation-required-message="Please select what category your lost items falls under." />
@@ -138,30 +142,54 @@
                                      </form>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            </div>
+                            </div> -->
+                            <h6>Select a Category from the Dropdown Below</h6>
+                            <select name="dropdown" id="categorys">
+                                <option value = "wallet" selected>Wallets/Purses</option>
+                                <option value = "clothes">Clothes</option> 
+                                <option value = "keys">Keys</option> 
+                                <option value = "phone">Phones/Devices</option> 
+                                <option value = "pets">Pets</option> 
+                                <option value = "jewellery">Jewellery</option> 
+                              </select>
+                        <!-- 
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle"
+                                        type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        Select a Category from the Dropdown Below
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <option value = "wallet" selected>Wallets/Purses</option>
+                                  <option value = "clothes">Clothes</option> 
+                                  <option value = "keys">Keys</option> 
+                                  <option value = "phone">Phones/Devices</option> 
+                                  <option value = "pets">Pets</option> 
+                                  <option value = "jewellery">Jewellery</option> 
+                                </div>
+                              </div> -->
 
                                 <!-- ItemDescriptionSection-->
-                                 <div class="control-group">
-                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Please describe the item you have found.</label>
-                                    <textarea class="form-control" name="dec" id="Item Description" rows="5" placeholder="ItemDescription" required="required" data-validation-required-message="Please enter the details of your found item."></textarea>
+                                <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Please describe the item you have lost</label> 
+                                    <textarea class="form-control" id="ItemDescription" rows="5" placeholder="Item Description" required="required" data-validation-required-message="Please enter details of the missing item."></textarea>
                                     <p class="help-block text-danger"></p>
-                                 </div>
-                                 </div>
-
-                                 <!-- LocationSection-->
+                                </div>
+                                
+                                <!-- LocationSection-->
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Please enter your Location</label>
-                                        <textarea class="form-control" id="Item Description" rows="1" placeholder="Location" required="required" data-validation-required-message="Please enter your Location"></textarea>
+                                        <textarea class="form-control" id="Location" rows="1" placeholder="Location" required="required" data-validation-required-message="Please enter your Location"></textarea>
                                         <p class="help-block text-danger"></p>
                                      </div>
                                 </div>
 
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit"value="Insert">Submit Form</button></div>
-                        </form>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit" onclick="foundForm()">Send</button></div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -207,6 +235,12 @@
         </footer>
         
         <!-- Bootstrap core JS-->
+        <script src="js/toasty.js"></script>
+        <script>
+
+            var toast = new Toasty();
+            
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
@@ -216,5 +250,6 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/foundForm.js"></script>
     </body>
 </html>
