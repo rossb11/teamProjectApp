@@ -34,7 +34,6 @@
         }
       });
     }
-    
 
     
     
@@ -82,3 +81,4 @@
 
     // calling the getLocation() method
     getLocation();
+    
