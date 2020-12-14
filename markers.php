@@ -11,7 +11,13 @@
             "longitude" => $row['longitude'],
             "latitude"  => $row['latitude'],
             "category" => $row['category'],
+            "usserName" => $row['usserName'],
             "location"  => $row['location'],
+            "phone" => $row['phone'],
+            "email" => $row['email'],
+            "itemDec" => $row['itemDec'],
+
+            
         );
         $items[] = $item;
     }
