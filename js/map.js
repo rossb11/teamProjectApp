@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  
 let autocomplete;
 //google api
@@ -138,3 +139,18 @@ function geocodeAddress(geocoder, resultsMap) {
       }
     });
   }
+=======
+ 
+let autocomplete;
+
+function initAutocomplete(){
+    autocomplete= new google.maps.places.Autocomplete(
+        document.getElementById('locationsearch'),
+        {
+            types: ['street_address'],
+            componentRestrictions: {'country' : ['IE']}
+        });
+    
+
+}
+>>>>>>> cde6b4f511db0bdaf2bd29fe8c4b476a08ac74c4

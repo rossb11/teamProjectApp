@@ -82,8 +82,4 @@
 
     // calling the getLocation() method
     getLocation();
-<<<<<<< HEAD
   
-=======
-    
->>>>>>> cde6b4f511db0bdaf2bd29fe8c4b476a08ac74c4

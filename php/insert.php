@@ -1,7 +1,10 @@
 <?php
+<<<<<<< HEAD
     
     
 
+=======
+>>>>>>> cde6b4f511db0bdaf2bd29fe8c4b476a08ac74c4
     require_once 'connect.php';
 
     $name=mysqli_real_escape_string($conn,$_REQUEST['name']);

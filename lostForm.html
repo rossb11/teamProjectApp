@@ -14,6 +14,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF1lVZ2HaMpDXmDlAmMrDAsdKZBgCAi38&libraries=&v=weekly"
         defer
         ></script>
+        <script src="js/search.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -54,8 +55,8 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="categories.html">Categories</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="map.html">Maps</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="contactForm.html">Contact Us</a></li>
-                        <input type="text" placeholder="Search..">
-                        <button type="submit">Submit</button>
+                        <input type="text" id = "search" placeholder="Search.." >
+                    <button type="submit" onclick="searchBar();">Submit</button>
                     </ul>
                 </div>
             </div>
