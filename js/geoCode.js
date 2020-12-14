@@ -1,4 +1,4 @@
-function foundForm(){ 
+function geo(){ 
     //object 
     const foundListing = {
         name:  $("input#name").val(),
@@ -6,7 +6,8 @@ function foundForm(){
         phone: $("input#phone").val(),
         category: $("select#categorys").val(),
         location: $("textarea#Location").val(),
-        itemDescription: $("textarea#ItemDescription").val()
+        itemDescription: $("textarea#ItemDescription").val(),
+        dbname: $("input#dbname").val()
     }
     //For coordinates
     const geocoder = new google.maps.Geocoder();
@@ -23,7 +24,7 @@ function foundForm(){
                 toast.error("Form is invalid");
             } else{ 
                 $.ajax({
-                    url: "/php/found.php",
+                    url: "/php/insert.php",
                     type: "POST",
                     data: foundListing,
                     cache: false,

@@ -9,11 +9,12 @@
 
     // loading map onto page
     function initMap() {
+
         map = new google.maps.Map(document.getElementById("map"), {
           zoom: 8,
           center: {lat:latitude, lng: longitude},
         });
-
+      
         const geocoder = new google.maps.Geocoder();
         document.getElementById("submit").addEventListener("click", () => {
         geocodeAddress(geocoder, map);
@@ -34,7 +35,6 @@
         }
       });
     }
-    
 
     
     
@@ -71,9 +71,9 @@
           label: "Your Current Location"
         });
        
-        //marker for lost items
-        
-        //marker for found items
+      //marker for lost items
+
+      //marker for found items
        
                 
         // To add the marker to the map, call setMap();
@@ -82,3 +82,4 @@
 
     // calling the getLocation() method
     getLocation();
+  
